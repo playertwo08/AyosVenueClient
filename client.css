@@ -1,0 +1,303 @@
+:root {
+  --ink: #15243a;
+  --accent: #ff9c82;
+  --accent-hover: #ff876b;
+  --focus: #984431;
+  --muted: #4e5b6d;
+  --line: #cfd8e3;
+  --surface: #e9eef5;
+  --bg: #f5f7fa;
+}
+html { scroll-behavior: auto; }
+[hidden] { display: none !important; }
+header { height: 76px; }
+header nav a, .mobile-menu a, .footer-bottom > a { display: flex; align-items: center; min-height: 44px; }
+header nav a:hover, footer a:hover { color: var(--focus); }
+header nav a[aria-current], .mobile-menu a[aria-current] { text-decoration: underline; text-underline-offset: 5px; }
+.brand { letter-spacing: 0; }
+.club-mark { width: 36px; height: 36px; flex: none; }
+.button:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.button.secondary:hover, .choice.selected, .choice:hover, .mockup, .pass-footer, .booking-side { background: var(--surface); }
+.button.secondary:hover, header.has-scrolled { border-color: var(--line); }
+.demo-bar { color: var(--bg); }
+header .button, .menu-toggle, .chip, .demo-reset { min-height: 44px; }
+.menu-toggle { min-width: 44px; }
+.mobile-menu { padding: 8px 5%; background: var(--bg); border-bottom: 1px solid var(--line); }
+.client-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  padding-block: 48px;
+}
+.client-hero-label { display: block; font-weight: 600; color: var(--muted); }
+.client-hero h1 {
+  max-width: 10ch;
+  margin-block: 16px;
+  font: 600 clamp(48px, 6vw, 88px)/0.98 Barlow, Arial, sans-serif;
+  text-transform: none;
+  letter-spacing: -0.04em;
+}
+.client-hero-copy p { max-width: 33ch; color: var(--muted); }
+.client-hero-copy .button { margin-top: 24px; }
+.client-hero-figure { min-width: 0; margin: 0; }
+.client-hero-image { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: 8px; }
+.client-hero-image img {
+  position: absolute;
+  inset: -24px 0 0;
+  height: calc(100% + 24px);
+  object-position: center;
+  transform: translateY(var(--parallax-y, 0px));
+}
+.client-hero-figure figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) {
+  .client-hero-image img { inset: 0; height: 100%; transform: none; }
+}
+.venue-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.venue-facts strong { font-size: clamp(20px, 3vw, 36px); overflow-wrap: anywhere; }
+.venue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.venue-grid .photo { aspect-ratio: 16 / 10; }
+.visit-band { background: var(--surface); }
+.visit-band h3, .court-specs { margin-bottom: 16px; }
+.visit-band p { margin: 16px 0; }
+.visit-band a { display: inline-flex; align-items: center; min-height: 44px; }
+.court-specs div { display: grid; grid-template-columns: minmax(72px, 1fr) 2fr; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.court-specs dd { margin: 0; }
+.court-specs dt { font-weight: 600; }
+.rental-card { padding: 24px; }
+.rental-card p { margin: 8px 0 16px; }
+.footer-bottom { margin-top: 0; align-items: center; flex-wrap: wrap; gap: 16px; }
+.pass-body .text-link { display: flex; align-items: center; justify-content: center; min-height: 44px; }
+.pass-body img { max-width: 100%; height: auto; }
+.booking-side, .booking-main, .summary-row > span { min-width: 0; overflow-wrap: anywhere; }
+.progress span.active { color: var(--ink); }
+.slot.selected { color: var(--ink); }
+.motion-ready [data-reveal]:focus-within { opacity: 1; transform: none; }
+#toast:not(:empty) { display: block; }
+@media (max-width: 900px) {
+  header nav { display: none; }
+  .menu-toggle { display: block; }
+}
+@media (max-width: 767px) {
+  .client-hero { grid-template-columns: minmax(0, 1fr); padding-block: 32px; }
+  .client-hero-image { aspect-ratio: 16 / 10; }
+  .venue-grid { grid-template-columns: 1fr; }
+  .venue-facts { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .venue-facts div:last-child { grid-column: 1 / -1; }
+}
+header .brand { min-width: 0; }
+header .button { flex-shrink: 0; }
+.venue-grid > * { min-width: 0; }
+@media (max-width: 767px) {
+  .venue-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.venue-grid .court-card .photo { width: 100%; height: auto; }
+@media (max-width: 767px) {
+  header { gap: 8px; }
+  header .button.small { padding-inline: 12px; }
+  header .brand { gap: 8px; }
+}
+@media (max-width: 767px) {
+  header .brand { flex: 1 1 0; }
+  header .brand span { min-width: 0; }
+}
+.ayos-visit { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.ayos-visit h2 { margin-bottom: 12px; }
+
+/* Breakwater homepage and session intro */
+.club-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: radial-gradient(ellipse at 78% 24%, #dce7f2 0%, transparent 67%), var(--bg);
+}
+.club-stage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -28% -18% -20% 59%;
+  border: 1px solid #15243a24;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 1px), #15243a24 50%, transparent calc(50% + 1px)),
+    repeating-linear-gradient(0deg, transparent 0 139px, #15243a24 139px 140px);
+  transform: rotate(-16deg);
+  pointer-events: none;
+}
+.client-hero { padding-block: clamp(40px, 5.5vw, 80px); }
+.client-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.client-hero-label::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  background: var(--focus);
+}
+.client-hero h1 { font-size: clamp(56px, 7vw, 106px); }
+.client-hero-image { border-radius: 8px; box-shadow: 0 16px 36px #15243a20; }
+.client-hero-figure { padding: 8px; border: 1px solid #aebfd1; border-radius: 8px; background: #f5f7fa; }
+.client-hero-figure figcaption { margin: 8px 4px 2px; }
+.hero-photo-label {
+  position: absolute;
+  inset: auto auto 12px 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 600;
+}
+.hero-sports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hero-sports li { padding: 4px 12px; border: 1px solid #aebfd1; border-radius: 8px; font-size: 14px; }
+.home-facts { background: var(--ink); color: var(--bg); }
+.home-facts .venue-facts { padding-block: 24px; border: 0; }
+.home-facts .venue-facts span { color: #dce7f2; }
+.home-facts .venue-facts strong { color: var(--bg); }
+.featured-courts .venue-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.featured-courts .court-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+.featured-courts .card-info { padding: 16px; }
+#club-intro {
+  position: fixed;
+  z-index: 90;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  background: var(--ink);
+  color: var(--bg);
+  animation: club-intro-out 740ms ease-out both;
+}
+.club-intro-content { display: grid; justify-items: center; gap: 16px; padding: 24px; text-align: center; }
+.club-intro-name { font-size: clamp(24px, 5vw, 40px); font-weight: 600; }
+.club-intro-track { width: 128px; height: 2px; background: var(--accent); transform-origin: left; animation: club-intro-line 490ms ease-out both; }
+@keyframes club-intro-line { from { transform: scaleX(0); } }
+@keyframes club-intro-out { 0%, 66% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes club-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .client-hero-copy > * { animation: club-enter 440ms ease-out backwards; }
+  .client-hero-copy h1 { animation-delay: 50ms; }
+  .client-hero-copy p { animation-delay: 100ms; }
+  .client-hero-copy .button { animation-delay: 150ms; }
+  .hero-sports { animation-delay: 200ms; }
+  .client-hero-figure { animation: club-enter 520ms ease-out 100ms backwards; }
+  .client-hero-copy .button:focus-visible { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #club-intro { display: none; }
+}
+@media (max-width: 900px) {
+  .featured-courts .venue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .client-hero { gap: 24px; padding-block: 32px; }
+  .client-hero h1 { font-size: clamp(54px, 10vw, 72px); }
+  .club-stage::before { inset: 27% -55% -48% 45%; }
+  .featured-courts .venue-grid { grid-template-columns: minmax(0, 1fr); }
+}
+body:has(#club-intro:not([hidden])) .client-hero-copy > *,
+body:has(#club-intro:not([hidden])) .client-hero-figure { animation-play-state: paused; }
+.club-intro-logo { width: 112px; height: 112px; }
+
+.club-stage {
+  background: #102037;
+  color: var(--bg);
+}
+.club-stage::before {
+  inset: -46% 30% -65% -22%;
+  border-color: #dce7f230;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 1px), #dce7f227 50%, transparent calc(50% + 1px)),
+    repeating-linear-gradient(0deg, transparent 0 119px, #dce7f227 119px 120px);
+}
+.client-hero {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 4.5vw, 64px);
+  padding-block: clamp(40px, 5vw, 72px);
+}
+.client-hero-label, .client-hero-copy p { color: #dce7f2; }
+.client-hero-label::before { background: var(--accent); }
+.client-hero h1 { color: #fff; max-width: 9ch; }
+.client-hero-figure { padding: 0; border: 0; background: transparent; }
+.client-hero-image { aspect-ratio: 1.35; box-shadow: none; }
+.hero-photo-label {
+  display: grid;
+  gap: 2px;
+  inset: auto auto 16px 16px;
+  background: var(--bg);
+  color: var(--ink);
+}
+.hero-photo-label small { font-weight: 400; }
+.hero-sports li { border-color: #dce7f257; color: #dce7f2; }
+.club-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 24px; }
+.club-actions .button { margin-top: 0; }
+.club-actions .text-link { color: var(--bg); border-color: #dce7f257; }
+.club-stage a:focus-visible { outline-color: var(--accent); }
+.home-facts { background: var(--surface); color: var(--ink); }
+.home-facts .venue-facts strong { color: var(--ink); }
+.home-facts .venue-facts span { color: var(--muted); }
+.featured-courts .venue-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+.featured-courts .court-card { overflow: hidden; }
+.featured-courts .court-card:focus-visible { outline-offset: 4px; }
+.featured-courts .court-card:first-child { grid-row: span 2; display: flex; flex-direction: column; }
+.featured-courts .court-card:first-child .photo { flex: 1 0 auto; aspect-ratio: 6 / 5; }
+.featured-courts .court-card:not(:first-child) { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr); }
+.featured-courts .court-card:not(:first-child) .photo { height: 100%; min-height: 150px; aspect-ratio: auto; }
+.featured-courts .court-card:not(:first-child) .card-info { flex-wrap: wrap; align-content: center; gap: 12px; }
+.featured-courts .card-info h3 { font-size: clamp(22px, 2.3vw, 32px); }
+.club-visit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: clip;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.club-visit-info { padding: clamp(24px, 5vw, 64px); }
+.club-visit-info p { margin-block: 16px; }
+.club-amenities { padding: 0; margin: 16px 0; list-style: none; }
+.club-amenities li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.home-rental { display: grid; grid-template-rows: 1fr auto; background: var(--ink); color: #fff; }
+.home-rental-image { min-height: 220px; overflow: hidden; }
+.home-rental-image img { transition: transform 280ms ease-out; }
+.home-rental:hover img { transform: scale(1.035); }
+.home-rental-label { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 24px; }
+.home-rental-label .eyebrow::before { color: var(--accent); }
+.home-rental-label .circle-arrow { flex: none; color: var(--ink); background: var(--accent); }
+.home-rental:focus-visible { outline-offset: -5px; outline-color: var(--accent); }
+@media (max-width: 900px) {
+  .featured-courts .court-card:not(:first-child) { display: block; }
+  .featured-courts .court-card:not(:first-child) .photo { height: auto; aspect-ratio: 16 / 9; min-height: 0; }
+}
+@media (max-width: 767px) {
+  .client-hero, .featured-courts .venue-grid, .club-visit { grid-template-columns: minmax(0, 1fr); }
+  .client-hero { padding-block: 32px; }
+  .client-hero-image { aspect-ratio: 16 / 11; }
+  .featured-courts .court-card:first-child .photo { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-rental-image img { transition: none; }
+  .home-rental:hover img { transform: none; }
+}
+.club-visit.wrap { width: 90%; max-width: 1440px; padding-inline: 0; }
+.club-visit:not(:has(.home-rental)) { grid-template-columns: minmax(0, 1fr); }
+.featured-courts .court-card:only-child { grid-row: auto; }

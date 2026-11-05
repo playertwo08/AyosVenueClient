@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Explore sample pickleball and badminton courts at Breakwater Racket Club.">
+  <meta property="og:title" content="Breakwater Racket Club | Pickleball &amp; badminton">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/pickleball-hero.jpg">
+  <title>Breakwater Racket Club | Pickleball &amp; badminton</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/BarlowCondensed-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="energy.css">
+  <link rel="stylesheet" href="client.css">
+  <script src="assets/qrcode.js" defer></script>
+  <script src="data.js" defer></script>
+  <script src="demo-store.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="booking.js" defer></script>
+  <script src="router.js" defer></script>
+  <script src="motion.js" defer></script>
+</head>
+<body>
+  <div id="club-intro" hidden aria-hidden="true">
+    <div class="club-intro-content">
+      <img class="club-intro-logo" src="assets/favicon.svg" width="64" height="64" alt="">
+      <span class="club-intro-name"></span>
+      <div class="club-intro-track"></div>
+    </div>
+  </div>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo-bar" id="demo-label">Demo venue · Illustrative courts, rates, and imagery</div>
+  <header>
+    <a class="brand" href="#/"></a>
+    <nav aria-label="Main navigation">
+      <a href="#/courts">Courts</a><a href="#/about">About</a><a href="#/contact">Contact</a>
+    </nav>
+    <a class="button small" data-book>Book a court</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">☰</button>
+  </header>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+    <a href="#/courts">Courts</a><a href="#/about">About</a><a href="#/contact">Contact</a>
+  </nav>
+  <main id="main" tabindex="-1"><noscript>Enable JavaScript to browse courts and try the booking demo.</noscript></main>
+  <footer>
+    <div class="footer-bottom">
+      <a class="brand" href="#/"></a>
+      <a id="rental-link" href="#/equipment">Equipment rentals</a>
+      <span id="credit">powered by ayos technology</span>
+    </div>
+    <p class="fine" id="footer-note">Sample venue details. Reservations, payments, and check-ins are simulated in this browser.</p>
+    <button class="demo-reset" type="button">Reset local booking demo</button>
+  </footer>
+  <div id="toast" role="status"></div>
+</body>
+</html>
